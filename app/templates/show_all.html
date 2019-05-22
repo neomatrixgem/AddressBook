@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Address db show all</title>
+</head>
+<body>
+<h3>
+    <a href="{{ url_for('show_all') }}">AddressBook - A demo Flask MySQL based Application</a>
+</h3>
+<hr/>
+{% for example in get_flashed_messages() %}
+    {{ message }}
+{% endfor %}
+
+<h3>Address Book</h3>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Pincode</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    {% for address in addresses %}
+    <tr>
+        <td>{{ address.name }}</td>
+        <td>{{ address.addr }}</td>
+        <td>{{ address.city }}</td>
+        <td>{{ address.pin }}</td>
+    </tr>
+    {% endfor %}
+</table>
+ <a href="/show_new">Add address</a>
+</body>
+</html>
